@@ -9,16 +9,16 @@ body {
   overflow-x: clip;
 }
 
-/* hero entrance — four staggered beats, ~2.6s total.
-   1. wordmark  assembles letter-by-letter, growing in from the left
-   2. photo     fades in, blur resolving to sharp
-   3. tagline   slides in from the right, two lines offset
-   4. lower     content cascades upward, one card after another
-   transform + opacity only, so every beat stays on the compositor. */
+/* ============================================================
+   HERO ENTRANCE — updated timing (replace the matching block
+   in your index.css / globals.css). Sequence, ~1.9s total:
 
-/* the wordmark assembles one letter at a time: each letter starts small and
-   off to the left, then grows into place. scale + translateX + opacity share
-   a single transform so the whole thing stays on the compositor. */
+   0.00s – 0.82s   wordmark letters grow in from the LEFT, staggered
+   0.65s – 1.20s   photo fades in, blur resolves to sharp
+   0.95s – 1.45s   tagline slides in from the RIGHT
+   1.20s – 2.00s   tags / text / buttons / stat cards cascade up
+   ============================================================ */
+
 @keyframes hero-letter {
   from {
     opacity: 0;
@@ -33,7 +33,7 @@ body {
 .hero-letter {
   display: inline-block;
   transform-origin: center bottom;
-  animation: hero-letter 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  animation: hero-letter 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
 }
 
 @keyframes hero-photo {
@@ -48,7 +48,7 @@ body {
 }
 
 .hero-photo {
-  animation: hero-photo 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 1.15s both;
+  animation: hero-photo 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.65s both;
 }
 
 @keyframes hero-tagline {
@@ -61,7 +61,7 @@ body {
 }
 
 .hero-tagline {
-  animation: hero-tagline 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 1.45s both;
+  animation: hero-tagline 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.95s both;
 }
 
 @keyframes hero-line {
@@ -75,7 +75,7 @@ body {
 
 .hero-line {
   display: block;
-  animation: hero-line 0.45s ease-out 1.45s both;
+  animation: hero-line 0.4s ease-out 0.95s both;
 }
 
 @keyframes hero-item {
