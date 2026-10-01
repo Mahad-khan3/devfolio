@@ -2,7 +2,7 @@
    HERO ENTRANCE — updated timing (replace the matching block
    in your index.css / globals.css). Sequence, ~1.9s total:
 
-   0.00s – 0.84s   wordmark letters grow in from the RIGHT, staggered
+   0.00s – 1.04s   wordmark letters slide in from the RIGHT, then grow in place
    0.65s – 1.20s   photo fades in, blur resolves to sharp
    0.95s – 1.45s   tagline slides in from the RIGHT
    1.20s – 2.00s   tags / text / buttons / stat cards cascade up
@@ -13,12 +13,25 @@
    receives from App.
    ============================================================ */
 
+/* Two-stage entrance, so each letter reads as "arrive, then grow":
+   the first 60% of the duration slides the letter in from the right
+   and parks it at its final spot still small, then the last 40%
+   scales it up in place. */
 @keyframes hero-letter {
-  from {
+  0% {
     opacity: 0;
     transform: translateX(28vw) scale(0.25);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
-  to {
+  15% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0) scale(0.25);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  100% {
     opacity: 1;
     transform: translateX(0) scale(1);
   }
@@ -27,7 +40,7 @@
 .hero-letter {
   display: inline-block;
   transform-origin: center bottom;
-  animation: hero-letter 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  animation: hero-letter 0.7s both;
 }
 
 @keyframes hero-photo {
