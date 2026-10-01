@@ -90,13 +90,14 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
           >
             <div className="absolute inset-0 -mt-[20vh] sm:mt-0 flex flex-col items-center justify-center pointer-events-none" style={{ zIndex: 0 }}>
               <h1 className="text-[26vw] leading-none font-black text-[#00a896] text-center tracking-tight whitespace-nowrap select-none">
-                {/* letters stagger tighter now: 0.08s apart instead of 0.12s,
-                    so the whole word assembles in ~0.8s instead of ~1s */}
+                {/* the stagger accelerates: the gap between letters shrinks
+                    as the word builds, so M sets the pace and the last A
+                    and D land right on its heels */}
                 <span className="hero-letter" style={{ animationDelay: '0s' }}>M</span>
-                <span className="hero-letter" style={{ animationDelay: '0.08s' }}>A</span>
-                <span className="hero-letter" style={{ animationDelay: '0.16s' }}>H</span>
-                <span className="hero-letter" style={{ animationDelay: '0.24s' }}>A</span>
-                <span className="hero-letter" style={{ animationDelay: '0.32s' }}>D</span>
+                <span className="hero-letter" style={{ animationDelay: '0.1s' }}>A</span>
+                <span className="hero-letter" style={{ animationDelay: '0.19s' }}>H</span>
+                <span className="hero-letter" style={{ animationDelay: '0.27s' }}>A</span>
+                <span className="hero-letter" style={{ animationDelay: '0.34s' }}>D</span>
               </h1>
             </div>
           </div>
