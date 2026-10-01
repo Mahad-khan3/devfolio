@@ -9,45 +9,53 @@ body {
   overflow-x: clip;
 }
 
-/* hero entrance — staged reveal, ~1.35s total.
-   0s type · 0.2s image · 0.4s heading lines · 0.75s content.
+/* hero entrance — three beats, ~1.45s total.
+   1. heading slides in from the right and lands in the centre
+   2. heading lifts from the centre up to the top
+   3. image, wordmark and remaining content rise from below
    transform + opacity only, so every step stays on the compositor. */
 
-@keyframes image-in {
+@keyframes hero-heading {
+  0% {
+    opacity: 0;
+    transform: translate(80px, 0);
+  }
+  38% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  62% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, -38vh);
+  }
+}
+
+.hero-heading {
+  animation: hero-heading 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes hero-line {
   from {
     opacity: 0;
-    filter: blur(10px);
   }
   to {
     opacity: 1;
-    filter: blur(0);
   }
 }
 
-.image-in {
-  animation: image-in 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) 0.2s backwards;
-}
-
-@keyframes line-slide {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.line-slide {
+.hero-line {
   display: block;
-  animation: line-slide 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) 0.4s backwards;
+  animation: hero-line 0.45s ease-out both;
 }
 
-@keyframes content-in {
+@keyframes hero-rise {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(70px);
   }
   to {
     opacity: 1;
@@ -55,8 +63,8 @@ body {
   }
 }
 
-.content-in {
-  animation: content-in 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.75s backwards;
+.hero-rise {
+  animation: hero-rise 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.85s both;
 }
 
 @keyframes menu-in {
