@@ -1,11 +1,12 @@
 /* ============================================================
-   HERO ENTRANCE — updated timing (replace the matching block
-   in your index.css / globals.css). Sequence, ~1.9s total:
+   HERO ENTRANCE — four acts, ~3.2s total:
 
-   0.00s – 1.02s   M A H slide in from the RIGHT at full size, then A D grow in place
-   0.65s – 1.20s   photo fades in, blur resolves to sharp
-   0.95s – 1.45s   tagline slides in from the RIGHT
-   1.20s – 2.00s   tags / text / buttons / stat cards cascade up
+   0.00s – 1.02s   M A H slide in from the RIGHT at full size,
+                   then A D arrive small and grow in place
+   1.02s – 1.60s   hold — the word sits still once it is complete
+   1.60s – 2.20s   the finished word lifts from centre to the top
+   2.20s – 3.20s   photo, tagline and lower content rise up
+                   from below and settle
 
    The left sidebar panel is part of this section: it has no
    keyframes of its own, it fades in as the hero scroll hands
@@ -62,19 +63,52 @@
   animation: hero-letter 0.7s both;
 }
 
+/* Act three: once the word is whole it holds for a beat, then travels
+   up to the top of the screen and stays there. On mobile the word
+   already starts higher (-20vh), so it travels less far. */
+@keyframes hero-wordmark-top {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-42vh);
+  }
+}
+
+@keyframes hero-wordmark-top-sm {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-22vh);
+  }
+}
+
+.hero-wordmark-top {
+  animation: hero-wordmark-top 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 1.6s both;
+}
+
+@media (max-width: 639px) {
+  .hero-wordmark-top {
+    animation-name: hero-wordmark-top-sm;
+  }
+}
+
 @keyframes hero-photo {
   from {
     opacity: 0;
+    transform: translateY(48px);
     filter: blur(8px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
     filter: blur(0);
   }
 }
 
 .hero-photo {
-  animation: hero-photo 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.65s both;
+  animation: hero-photo 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 2.2s both;
 }
 
 @keyframes hero-tagline {
@@ -87,7 +121,7 @@
 }
 
 .hero-tagline {
-  animation: hero-tagline 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.95s both;
+  animation: hero-tagline 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 2.3s both;
 }
 
 @keyframes hero-line {
@@ -101,13 +135,13 @@
 
 .hero-line {
   display: block;
-  animation: hero-line 0.4s ease-out 0.95s both;
+  animation: hero-line 0.4s ease-out 2.3s both;
 }
 
 @keyframes hero-item {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(36px);
   }
   to {
     opacity: 1;

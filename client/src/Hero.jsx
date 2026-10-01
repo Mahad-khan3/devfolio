@@ -88,7 +88,7 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
             className="absolute inset-0 z-50 pointer-events-none"
             style={{ transformOrigin: '0 0', transform: `translate(${24 * pa}px, ${20 * pa}px) scale(${1 - 0.92 * pa})` }}
           >
-            <div className="absolute inset-0 -mt-[20vh] sm:mt-0 flex flex-col items-center justify-center pointer-events-none" style={{ zIndex: 0 }}>
+            <div className="absolute inset-0 -mt-[20vh] sm:mt-0 flex flex-col items-center justify-center pointer-events-none hero-wordmark-top" style={{ zIndex: 0 }}>
               <h1 className="text-[26vw] leading-none font-black text-[#00a896] text-center tracking-tight whitespace-nowrap select-none">
                 {/* M A H lead the word at full size and just slide in;
                     only the closing A and D grow, so the word resolves
@@ -107,7 +107,7 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
               <div className="flex items-end gap-8">
                 <div className="max-w-xl">
                   {/* tags card — starts right after tagline settles */}
-                  <div className="hero-item" style={{ animationDelay: '1.2s' }}>
+                  <div className="hero-item" style={{ animationDelay: '2.5s' }}>
                     <div className="hidden sm:block w-max min-w-[200px] rounded-2xl bg-black/25 backdrop-blur-md border border-white/30 p-5 shadow-lg shadow-black/20" style={{ opacity: 1 - pa, transform: `translateX(${-60 * pa}vw)`, visibility: done ? 'hidden' : 'visible', pointerEvents: done ? 'none' : 'auto' }}>
                       <div className="flex flex-col gap-2 sm:gap-4">
                         {TAGS.map((t) => (
@@ -117,7 +117,7 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
                     </div>
                   </div>
 
-                  <div className="hero-item mt-4" style={{ animationDelay: '1.3s' }}>
+                  <div className="hero-item mt-4" style={{ animationDelay: '2.6s' }}>
                     <p
                       className="text-xs sm:text-sm text-black"
                       style={{ fontFamily: '"Tr 3 A", Arial, sans-serif', fontWeight: 950, opacity: 1 - pa, visibility: done ? 'hidden' : 'visible' }}
@@ -126,7 +126,7 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
                     </p>
                   </div>
 
-                  <div className="hero-item mt-5" style={{ animationDelay: '1.4s' }}>
+                  <div className="hero-item mt-5" style={{ animationDelay: '2.7s' }}>
                     <div className="hidden sm:flex flex-wrap gap-4" style={{ opacity: done ? 0 : 1 - pa * 0.4, transform: `translateX(${-30 * pa}vw)`, visibility: done ? 'hidden' : 'visible' }}>
                       <a href="#overview" className="rounded-full bg-[#00a896] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#00a896]/40 transition hover:bg-[#008f80]">
                         Book a Call
@@ -141,7 +141,7 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
             </div>
           </div>
 
-          <div className="hero-item sm:hidden absolute top-[42%] left-4 z-[65] rounded-2xl bg-black/25 backdrop-blur-md border border-white/30 p-3 shadow-lg shadow-black/20" style={{ animationDelay: '1.2s' }}>
+          <div className="hero-item sm:hidden absolute top-[42%] left-4 z-[65] rounded-2xl bg-black/25 backdrop-blur-md border border-white/30 p-3 shadow-lg shadow-black/20" style={{ animationDelay: '2.5s' }}>
             <div className="flex flex-col gap-2">
               {TAGS.map((t) => (
                 <Tag key={t.label} sym={t.sym} label={t.label} />
@@ -160,7 +160,7 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
               >
                 <span className="hero-line">FULL-STACK WEB &amp;</span>
                 {/* second line follows the first by 0.1s, same as before */}
-                <span className="hero-line" style={{ animationDelay: '1.05s' }}>SOFTWARE DEVELOPER</span>
+                <span className="hero-line" style={{ animationDelay: '2.4s' }}>SOFTWARE DEVELOPER</span>
               </h2>
             </div>
           </div>
@@ -170,12 +170,12 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
             style={{ transform: `translateX(${-70 * pa}vw) translateY(${-50 * pa}vh) scale(${1 - 0.6 * pa})`, transformOrigin: 'bottom right', zIndex: 70, display: done ? 'none' : 'block', visibility: done ? 'hidden' : 'visible', pointerEvents: 'none' }}
           >
             <div className="absolute z-30 bottom-[20%] right-[3%] sm:bottom-[18%] sm:right-[22%] flex flex-col gap-3">
-              <div className="hero-item hidden sm:block" style={{ animationDelay: '1.2s' }}>
+              <div className="hero-item hidden sm:block" style={{ animationDelay: '2.5s' }}>
                 <div className="origin-bottom-right scale-[0.85] sm:scale-100">
                   <StatCard number="10+" label="10+ Projects" icon />
                 </div>
               </div>
-              <div className="hero-item" style={{ animationDelay: '1.3s' }}>
+              <div className="hero-item" style={{ animationDelay: '2.6s' }}>
                 <div className="origin-bottom-right scale-[0.85] sm:scale-100">
                   <StatCard number="3+" label="Years of Experience" />
                 </div>
@@ -184,7 +184,7 @@ function Hero({ pa, done, seg, panelDark, activeNav, setActiveNav }) {
           </div>
 
           <div className="absolute inset-0 pointer-events-none" style={{ opacity: 1 - pa, zIndex: 30, display: done ? 'none' : 'block', visibility: done ? 'hidden' : 'visible', pointerEvents: done ? 'none' : 'auto' }}>
-            <p className="hero-item absolute z-30 bottom-[4%] right-[1%] hidden xl:block w-72 min-h-[150px] rounded-2xl bg-gray-400/30 backdrop-blur-md border border-white/30 p-5 text-xs sm:text-sm font-bold text-black shadow-lg shadow-black/30 text-left leading-relaxed" style={{ animationDelay: '1.4s' }}>
+            <p className="hero-item absolute z-30 bottom-[4%] right-[1%] hidden xl:block w-72 min-h-[150px] rounded-2xl bg-gray-400/30 backdrop-blur-md border border-white/30 p-5 text-xs sm:text-sm font-bold text-black shadow-lg shadow-black/30 text-left leading-relaxed" style={{ animationDelay: '2.7s' }}>
               I’m a Web &amp; Software Developer with 3+ years of experience building modern websites, web applications, e-commerce solutions, and software products.
             </p>
           </div>
