@@ -2,7 +2,7 @@
    HERO ENTRANCE — updated timing (replace the matching block
    in your index.css / globals.css). Sequence, ~1.9s total:
 
-   0.00s – 1.04s   wordmark letters slide in from the RIGHT, then grow in place
+   0.00s – 1.02s   M A H slide in from the RIGHT at full size, then A D grow in place
    0.65s – 1.20s   photo fades in, blur resolves to sharp
    0.95s – 1.45s   tagline slides in from the RIGHT
    1.20s – 2.00s   tags / text / buttons / stat cards cascade up
@@ -13,7 +13,26 @@
    receives from App.
    ============================================================ */
 
-/* Two-stage entrance, so each letter reads as "arrive, then grow":
+/* The word opens in two parts: the first three letters (M A H) are already
+   full size and simply slide in from the right, while the last two (A D)
+   arrive small and grow in place. */
+@keyframes hero-letter-lead {
+  from {
+    opacity: 0;
+    transform: translateX(28vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-letter-lead {
+  display: inline-block;
+  animation: hero-letter-lead 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+/* Two-stage entrance, so the growing letters read as "arrive, then grow":
    the first 60% of the duration slides the letter in from the right
    and parks it at its final spot still small, then the last 40%
    scales it up in place. */
