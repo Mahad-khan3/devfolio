@@ -461,7 +461,7 @@ function App() {
             style={{ transform: `translateY(${-90 * pa}vh)`, display: done ? 'none' : 'block', visibility: done ? 'hidden' : 'visible' }}
 
           >
-            <div className="absolute inset-0 z-30 flex items-start justify-center px-6 pt-[8vh] hero-tagline">
+            <div className="absolute inset-0 z-30 flex items-end justify-center px-6 pb-[6vh] hero-tagline">
 
               <h2
                 className="uppercase text-left text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]"
