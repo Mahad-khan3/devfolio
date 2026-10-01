@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
@@ -7,90 +7,6 @@ html {
 body {
   margin: 0;
   overflow-x: clip;
-}
-
-/* ============================================================
-   HERO ENTRANCE — updated timing (replace the matching block
-   in your index.css / globals.css). Sequence, ~1.9s total:
-
-   0.00s – 0.82s   wordmark letters grow in from the LEFT, staggered
-   0.65s – 1.20s   photo fades in, blur resolves to sharp
-   0.95s – 1.45s   tagline slides in from the RIGHT
-   1.20s – 2.00s   tags / text / buttons / stat cards cascade up
-   ============================================================ */
-
-@keyframes hero-letter {
-  from {
-    opacity: 0;
-    transform: translateX(-80px) scale(0.35);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
-}
-
-.hero-letter {
-  display: inline-block;
-  transform-origin: center bottom;
-  animation: hero-letter 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) both;
-}
-
-@keyframes hero-photo {
-  from {
-    opacity: 0;
-    filter: blur(8px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-.hero-photo {
-  animation: hero-photo 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.65s both;
-}
-
-@keyframes hero-tagline {
-  from {
-    transform: translateX(45px);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-.hero-tagline {
-  animation: hero-tagline 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.95s both;
-}
-
-@keyframes hero-line {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.hero-line {
-  display: block;
-  animation: hero-line 0.4s ease-out 0.95s both;
-}
-
-@keyframes hero-item {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-item {
-  animation: hero-item 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) both;
 }
 
 @keyframes menu-in {
@@ -108,3 +24,4 @@ body {
   transform-origin: top center;
   animation: menu-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
