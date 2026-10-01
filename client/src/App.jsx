@@ -377,7 +377,7 @@ function App() {
             style={{ opacity: Math.max(0, 1 - pa * 1.4), zIndex: 55, display: done ? 'none' : 'block' }}
 
           >
-            <div className="absolute inset-0 flex items-center justify-center rise-up pointer-events-none">
+            <div className="absolute inset-0 flex items-center justify-center image-in pointer-events-none">
               <img
                 src="/mahadlast.png"
                 alt="mahadlast"
@@ -396,20 +396,16 @@ function App() {
             style={{ transformOrigin: '0 0', transform: `translate(${24 * pa}px, ${20 * pa}px) scale(${1 - 0.92 * pa})` }}
 
           >
-            <div className="absolute inset-0 -mt-[20vh] sm:mt-0 flex flex-col items-center justify-center title-up pointer-events-none">
-              <h1 className="text-[26vw] leading-none font-black text-[#00a896] text-center tracking-tight whitespace-nowrap select-none slide-in-left">
-                <span className="grow-up" style={{ animationDelay: '0.1s' }}>M</span>
-                <span className="grow-up" style={{ animationDelay: '0.15s' }}>A</span>
-                <span className="grow-up" style={{ animationDelay: '0.2s' }}>H</span>
-                <span className="grow-up" style={{ animationDelay: '0.25s' }}>A</span>
-                <span className="grow-up" style={{ animationDelay: '0.3s' }}>D</span>
+            <div className="absolute inset-0 -mt-[20vh] sm:mt-0 flex flex-col items-center justify-center pointer-events-none" style={{ zIndex: 0 }}>
+              <h1 className="text-[26vw] leading-none font-black text-[#00a896] text-center tracking-tight whitespace-nowrap select-none">
+                MAHAD
               </h1>
             </div>
           </div>
 
           <div className="absolute inset-0" style={{ opacity: 1 - pa, zIndex: 58, display: done ? 'none' : 'block', visibility: done ? 'hidden' : 'visible', pointerEvents: done ? 'none' : 'auto' }}>
 
-            <div className="absolute inset-0 z-20 flex flex-col justify-end p-3 sm:p-8 rise-up">
+            <div className="absolute inset-0 z-20 flex flex-col justify-end p-3 sm:p-8 content-in">
               <div className="flex items-end gap-8">
                 <div className="max-w-xl">
                   <div className="hidden sm:block w-max min-w-[200px] rounded-2xl bg-black/25 backdrop-blur-md border border-white/30 p-5 shadow-lg shadow-black/20" style={{ opacity: 1 - pa, transform: `translateX(${-60 * pa}vw)`, visibility: done ? 'hidden' : 'visible', pointerEvents: done ? 'none' : 'auto' }}>
@@ -447,7 +443,7 @@ function App() {
             </div>
           </div>
 
-          <div className="sm:hidden absolute top-[42%] left-4 z-[65] rounded-2xl bg-black/25 backdrop-blur-md border border-white/30 p-3 shadow-lg shadow-black/20 rise-up">
+          <div className="sm:hidden absolute top-[42%] left-4 z-[65] rounded-2xl bg-black/25 backdrop-blur-md border border-white/30 p-3 shadow-lg shadow-black/20 content-in">
 
             <div className="flex flex-col gap-2">
               {TAGS.map((t) => (
@@ -462,13 +458,14 @@ function App() {
             style={{ transform: `translateY(${-90 * pa}vh)`, display: done ? 'none' : 'block', visibility: done ? 'hidden' : 'visible' }}
 
           >
-            <div className="absolute z-30 bottom-[6%] left-4 right-4 pt-6 text-left sm:bottom-[15%] sm:left-[27%] sm:right-auto sm:pt-0 sm:w-[85%] rise-up">
+            <div className="absolute z-30 bottom-[6%] left-4 right-4 pt-6 text-left sm:bottom-[15%] sm:left-[27%] sm:right-auto sm:pt-0 sm:w-[85%]">
 
               <h2
                 className="uppercase text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)]"
                 style={{ fontFamily: '"Tr 3 A", Arial, sans-serif', fontSize: 'clamp(20px, 6.2vw, 60px)', lineHeight: 'clamp(22px, 6.6vw, 62px)', fontWeight: 950 }}
               >
-                FULL-STACK WEB &amp;<br />SOFTWARE DEVELOPER
+                <span className="line-slide">FULL-STACK WEB &amp;</span>
+                <span className="line-slide" style={{ animationDelay: '0.52s' }}>SOFTWARE DEVELOPER</span>
               </h2>
 
             </div>
@@ -479,18 +476,19 @@ function App() {
             style={{ transform: `translateX(${-70 * pa}vw) translateY(${-50 * pa}vh) scale(${1 - 0.6 * pa})`, transformOrigin: 'bottom right', zIndex: 70, display: done ? 'none' : 'block', visibility: done ? 'hidden' : 'visible', pointerEvents: 'none' }}
 
           >
-            <div className="absolute z-30 bottom-[20%] right-[3%] sm:bottom-[18%] sm:right-[22%] flex flex-col gap-3 origin-bottom-right scale-[0.85] sm:scale-100 rise-up">
-              <div className="hidden sm:block">
-                <StatCard number="10+" label="10+ Projects" icon />
+            <div className="absolute z-30 bottom-[20%] right-[3%] sm:bottom-[18%] sm:right-[22%] content-in">
+              <div className="flex flex-col gap-3 origin-bottom-right scale-[0.85] sm:scale-100">
+                <div className="hidden sm:block">
+                  <StatCard number="10+" label="10+ Projects" icon />
+                </div>
+                <StatCard number="3+" label="Years of Experience" />
               </div>
-              <StatCard number="3+" label="Years of Experience" />
-
             </div>
           </div>
 
           <div className="absolute inset-0 pointer-events-none" style={{ opacity: 1 - pa, zIndex: 30, display: done ? 'none' : 'block', visibility: done ? 'hidden' : 'visible', pointerEvents: done ? 'none' : 'auto' }}>
 
-            <p className="absolute z-30 bottom-[4%] right-[1%] hidden xl:block w-72 min-h-[150px] rounded-2xl bg-gray-400/30 backdrop-blur-md border border-white/30 p-5 text-xs sm:text-sm font-bold text-black shadow-lg shadow-black/30 text-left leading-relaxed rise-up">
+            <p className="absolute z-30 bottom-[4%] right-[1%] hidden xl:block w-72 min-h-[150px] rounded-2xl bg-gray-400/30 backdrop-blur-md border border-white/30 p-5 text-xs sm:text-sm font-bold text-black shadow-lg shadow-black/30 text-left leading-relaxed content-in">
               I’m a Web &amp; Software Developer with 3+ years of experience building modern websites, web applications, e-commerce solutions, and software products.
             </p>
 
