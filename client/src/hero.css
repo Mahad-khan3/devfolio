@@ -2,7 +2,7 @@
    HERO ENTRANCE — updated timing (replace the matching block
    in your index.css / globals.css). Sequence, ~1.9s total:
 
-   0.00s – 0.82s   wordmark letters grow in from the LEFT, staggered
+   0.00s – 0.84s   wordmark letters grow in from the RIGHT, staggered
    0.65s – 1.20s   photo fades in, blur resolves to sharp
    0.95s – 1.45s   tagline slides in from the RIGHT
    1.20s – 2.00s   tags / text / buttons / stat cards cascade up
@@ -16,7 +16,7 @@
 @keyframes hero-letter {
   from {
     opacity: 0;
-    transform: translateX(80px) scale(0.35);
+    transform: translateX(28vw) scale(0.25);
   }
   to {
     opacity: 1;
