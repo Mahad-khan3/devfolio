@@ -71,7 +71,7 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-42vh);
+    transform: translateY(-33vh);
   }
 }
 
@@ -80,7 +80,7 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-22vh);
+    transform: translateY(-13vh);
   }
 }
 
