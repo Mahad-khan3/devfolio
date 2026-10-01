@@ -9,33 +9,54 @@ body {
   overflow-x: clip;
 }
 
-/* hero entrance — three beats, ~1.45s total.
-   1. heading slides in from the right and lands in the centre
-   2. heading lifts from the centre up to the top
-   3. image, wordmark and remaining content rise from below
-   transform + opacity only, so every step stays on the compositor. */
+/* hero entrance — four staggered beats, ~1.95s total.
+   1. wordmark  slides in from the right
+   2. photo     fades in, blur resolving to sharp
+   3. tagline   slides in from the right, two lines offset
+   4. lower     content cascades upward, one card after another
+   transform + opacity only, so every beat stays on the compositor. */
 
-@keyframes hero-heading {
-  0% {
+@keyframes hero-wordmark {
+  from {
     opacity: 0;
-    transform: translate(80px, 0);
+    transform: translateX(90px);
   }
-  38% {
+  to {
     opacity: 1;
-    transform: translate(0, 0);
-  }
-  62% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, -38vh);
+    transform: translateX(0);
   }
 }
 
-.hero-heading {
-  animation: hero-heading 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+.hero-wordmark {
+  animation: hero-wordmark 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes hero-photo {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.hero-photo {
+  animation: hero-photo 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.85s both;
+}
+
+@keyframes hero-tagline {
+  from {
+    transform: translateX(45px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.hero-tagline {
+  animation: hero-tagline 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 1.15s both;
 }
 
 @keyframes hero-line {
@@ -49,13 +70,13 @@ body {
 
 .hero-line {
   display: block;
-  animation: hero-line 0.45s ease-out both;
+  animation: hero-line 0.45s ease-out 1.15s both;
 }
 
-@keyframes hero-rise {
+@keyframes hero-item {
   from {
     opacity: 0;
-    transform: translateY(70px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -63,8 +84,8 @@ body {
   }
 }
 
-.hero-rise {
-  animation: hero-rise 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.85s both;
+.hero-item {
+  animation: hero-item 0.45s cubic-bezier(0.25, 0.1, 0.25, 1) both;
 }
 
 @keyframes menu-in {
