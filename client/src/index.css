@@ -9,26 +9,31 @@ body {
   overflow-x: clip;
 }
 
-/* hero entrance — four staggered beats, ~1.95s total.
-   1. wordmark  slides in from the right
+/* hero entrance — four staggered beats, ~2.6s total.
+   1. wordmark  assembles letter-by-letter, growing in from the left
    2. photo     fades in, blur resolving to sharp
    3. tagline   slides in from the right, two lines offset
    4. lower     content cascades upward, one card after another
    transform + opacity only, so every beat stays on the compositor. */
 
-@keyframes hero-wordmark {
+/* the wordmark assembles one letter at a time: each letter starts small and
+   off to the left, then grows into place. scale + translateX + opacity share
+   a single transform so the whole thing stays on the compositor. */
+@keyframes hero-letter {
   from {
     opacity: 0;
-    transform: translateX(90px);
+    transform: translateX(-80px) scale(0.35);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
 
-.hero-wordmark {
-  animation: hero-wordmark 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+.hero-letter {
+  display: inline-block;
+  transform-origin: center bottom;
+  animation: hero-letter 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) both;
 }
 
 @keyframes hero-photo {
@@ -43,7 +48,7 @@ body {
 }
 
 .hero-photo {
-  animation: hero-photo 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 0.85s both;
+  animation: hero-photo 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 1.15s both;
 }
 
 @keyframes hero-tagline {
@@ -56,7 +61,7 @@ body {
 }
 
 .hero-tagline {
-  animation: hero-tagline 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 1.15s both;
+  animation: hero-tagline 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) 1.45s both;
 }
 
 @keyframes hero-line {
@@ -70,7 +75,7 @@ body {
 
 .hero-line {
   display: block;
-  animation: hero-line 0.45s ease-out 1.15s both;
+  animation: hero-line 0.45s ease-out 1.45s both;
 }
 
 @keyframes hero-item {
